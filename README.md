@@ -10,6 +10,14 @@ In my first iteration of this project, I will start out with a simple console pr
 ```
 dotnet new console -lang "F#" -o App
 dotnet new gitignore
+dotnet new sln
+dotnet sln add App/App.fsproj
+```
+
+Then run the project just to make sure everything works as expected
+
+```
+dotnet run -p App/App.fsproj
 ```
 
 ## Take Aways
