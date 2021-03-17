@@ -20,6 +20,14 @@ Then run the project just to make sure everything works as expected
 dotnet run -p App/App.fsproj
 ```
 
+## About the Address Book Application
+
+## Resources
+
+[Docs match expression](<https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2012/dd233242(v=vs.110))
+[More on match expression](https://fsharpforfunandprofit.com/posts/match-expression/)
+[Docs pattern matching](<https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2012/dd547125(v=vs.110)>)
+
 ## Take Aways
 
 - Data Centric Use Case

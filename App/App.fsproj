@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="CommonLibrary.fs" />
+    <Compile Include="AddressBook.fs" />
+    <Compile Include="UseCases.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
