@@ -20,13 +20,13 @@ let main argv =
     match command with
     | Some x -> 
       match x with
-      | "add" -> add {FirstName=Some("tomas"); LastName=Some("Sundvall"); EmailAddress=Some("tsunvall@someting.se"); PhoneNumber=None}
-      | "list" -> list ()
-      | "delete" -> delete {Id=Some("blahaa")}
+      | "add" -> ADD.exec {FirstName=Some("tomas"); LastName=Some("Sundvall"); EmailAddress=Some("tsunvall@someting.se"); PhoneNumber=None}
+      | "list" -> LIST.exec ()
+      | "delete" -> DELETE.exec {Id=Some("blahaa")}
       | _ -> Failure "Command not found"
     | None -> Failure "No command entered"
 
-  printfn "Is this a valid command? %A" result
+  printfn "Result of execution: %A" result
 
   let email = "tsundvall" |> EmailAddress
   let (EmailAddress email') = email
