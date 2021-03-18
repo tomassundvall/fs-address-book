@@ -1,5 +1,4 @@
 open CommonLibrary
-open AddressBook
 open UseCases
 
 let parseCommand args =
@@ -27,9 +26,5 @@ let main argv =
     | None -> Failure "No command entered"
 
   printfn "Result of execution: %A" result
-
-  let email = "tsundvall" |> EmailAddress
-  let (EmailAddress email') = email
-  printfn "The email: %s" email'
 
   0 // return an integer exit code

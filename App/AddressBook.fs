@@ -1,21 +1,26 @@
 module AddressBook 
 open CommonLibrary
 
-type FirstName = FirstName of string
-type LastName = LastName of string
-type EmailAddress = EmailAddress of string
-type PhoneNumber = PhoneNumber of string
+module EmailAddress =
 
-let CreateEmailAddress (s:string) =
-  if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$")
+  type T = EmailAddress of string
+
+  let create (s: string) =
+    if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$")
     then Some (EmailAddress s)
     else None
+
+  let value (EmailAddress e) = e
+
+type FirstName = FirstName of string
+type LastName = LastName of string
+type PhoneNumber = PhoneNumber of string
 
 type Contact =
   {
     FirstName: FirstName
     LastName: LastName
-    EmailAddress: EmailAddress
+    EmailAddress: EmailAddress.T
     PhoneNumber: PhoneNumber
   }
 
