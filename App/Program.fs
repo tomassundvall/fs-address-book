@@ -1,4 +1,5 @@
 open CommonLibrary
+open AddressBook
 open UseCases
 
 let parseCommand args =

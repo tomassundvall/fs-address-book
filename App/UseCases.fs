@@ -14,7 +14,14 @@ module ADD =
   }
 
   let exec (input: Input) =
-    validateFirstName input.FirstName
+    match input.FirstName with
+    | Some x -> 
+      let firstName = FirstName.create x
+      match firstName with
+      | Some a -> Success ""
+      | None _ -> Failure ""
+    | None _ -> Failure ""
+    
 
 
 ///
