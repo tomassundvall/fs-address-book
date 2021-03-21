@@ -10,6 +10,14 @@ module EmailAddress =
 
   // create with continuation
   let createWithCont success failure (s: string) =
+
+    // What I want to do here is to be able to add several validation rules, and also
+    // to carry out the validation in a railway oriented way, where we first do some
+    // parallel validation in order to be able to give back good feedback to the caller
+    // but then (possibly) finishes of with a regexp that checks the entire string if
+    // all the other checks pass. In theory that should not be necessary... but it might
+    // still be a simpler and better way of doing stuff.
+
     if System.Text.RegularExpressions.Regex.IsMatch(s, @"^\S+@\S+\.\S+$")
     then success (EmailAddress s)
     else failure "Email address must contain a @ sign"
@@ -94,12 +102,20 @@ module PhoneNumber =
 
 
 ///
+/// Name
+///
+type PersonalName =
+  {
+    FirstName: FirstName.T
+    LastName: LastName.T
+  }
+
+///
 /// Contact
 ///
 type Contact =
   {
-    FirstName: FirstName.T
-    LastName: LastName.T
-    EmailAddress: EmailAddress.T
-    PhoneNumber: PhoneNumber.T
+    PersonalName: PersonalName
+    EmailAddress: EmailAddress.T option
+    PhoneNumber: PhoneNumber.T option
   }
