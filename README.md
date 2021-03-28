@@ -27,6 +27,7 @@ dotnet run -p App/App.fsproj
 [Docs match expression](<https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2012/dd233242(v=vs.110))
 [More on match expression](https://fsharpforfunandprofit.com/posts/match-expression/)
 [Docs pattern matching](<https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2012/dd547125(v=vs.110)>)
+[Functional Recipe](https://fsharpforfunandprofit.com/posts/recipe-part2/)
 
 ## Take Aways
 
